@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QR Messaging</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <header class="header">
+            <h1>QR Messaging</h1>
+            <p>Say something. Without saying it out loud.</p>
+        </header>
+
+        <section class="card">
+
+            <h2>Create a Message</h2>
+
+            <textarea
+                id="message"
+                maxlength="250"
+                placeholder="Write your message..."
+            ></textarea>
+
+            <div class="counter">
+                <span id="characterCount">0</span>/250
+            </div>
+
+            <input
+                id="senderName"
+                type="text"
+                maxlength="40"
+                placeholder="Your name (optional)"
+            >
+
+            <button id="generateBtn">
+                Generate QR Code
+            </button>
+
+        </section>
+
+
+        <section
+            id="qrSection"
+            class="card qr-section hidden"
+        >
+
+            <h2>Your Message</h2>
+
+            <div id="qrcode"></div>
+
+            <p class="instruction">
+                Let the other person scan this QR code.
+            </p>
+
+            <button id="shareBtn" class="secondary">
+                Share Message
+            </button>
+
+            <button id="newMessageBtn" class="secondary">
+                Create Another
+            </button>
+
+        </section>
+
+
+        <section
+            id="receivedSection"
+            class="card received hidden"
+        >
+
+            <span class="badge">Nearby Message</span>
+
+            <h2>Someone wants to say hello.</h2>
+
+            <p id="receivedMessage"></p>
+
+            <p id="receivedSender"></p>
+
+            <button id="replyBtn">
+                I'd Like to Reply
+            </button>
+
+            <button id="ignoreBtn" class="secondary">
+                Not Interested
+            </button>
+
+        </section>
+
+
+        <footer>
+            <p>
+                QR Messaging • Privacy first
+            </p>
+        </footer>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
