@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background: #f4efe6;
+    --card: #fffdf8;
+    --text: #27231f;
+    --muted: #756e66;
+    --border: #d9d0c5;
+    --accent: #2f2923;
+    --white: #ffffff;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+
+    font-family: "Inter", sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 24px;
+}
+
+.app {
+    width: 100%;
+    max-width: 520px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.header h1 {
+    font-family: "Fredericka the Great", cursive;
+    font-size: clamp(42px, 10vw, 70px);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.header p {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    padding: 26px;
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 10px 35px rgba(50, 40, 30, 0.06);
+}
+
+.card h2 {
+    margin-bottom: 18px;
+    font-size: 22px;
+}
+
+textarea,
+input {
+    width: 100%;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: #fff;
+
+    padding: 15px;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+
+    transition: border 0.2s;
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+textarea:focus,
+input:focus {
+    border-color: var(--accent);
+}
+
+input {
+    margin-top: 12px;
+}
+
+.counter {
+    text-align: right;
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin-top: 6px;
+}
+
+button {
+    width: 100%;
+
+    margin-top: 18px;
+
+    border: none;
+    border-radius: 12px;
+
+    padding: 15px;
+
+    background: var(--accent);
+    color: var(--white);
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s,
+        opacity 0.15s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.qr-section {
+    text-align: center;
+}
+
+#qrcode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 25px auto;
+}
+
+#qrcode img {
+    padding: 12px;
+    background: white;
+    border-radius: 10px;
+}
+
+.instruction {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.badge {
+    display: inline-block;
+
+    background: #ebe4da;
+    color: var(--text);
+
+    padding: 7px 12px;
+
+    border-radius: 50px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    margin-bottom: 18px;
+}
+
+.received h2 {
+    font-family: "Fredericka the Great", cursive;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+#receivedMessage {
+    margin-top: 18px;
+
+    padding: 20px;
+
+    background: #f3eee7;
+
+    border-radius: 14px;
+
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+#receivedSender {
+    margin-top: 12px;
+
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin-top: 30px;
+}
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 15px;
+        align-items: flex-start;
+    }
+
+    .app {
+        margin-top: 30px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
